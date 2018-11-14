@@ -12,10 +12,10 @@ if( argc != 4 ) {
     exit(0);
 }
 char *filename= (char*) malloc(200* sizeof(char));
-srand(time(NULL));   
-     //struct timeval time; 
-     //gettimeofday(&time,NULL);
-     //srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
+//srand(time(NULL));   
+struct timeval time; 
+gettimeofday(&time,NULL);
+srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
 int N = atoi(argv[1]);
 int mu = atoi(argv[2]);
 int sigma = atoi(argv[3]);
@@ -27,7 +27,7 @@ MPI_Comm_rank (MPI_COMM_WORLD, &rank);
 MPI_Comm_size (MPI_COMM_WORLD, &size);
 sprintf(filename, "sample_%d.dat", rank+1);
 FILE *output = fopen(filename, "w+");
-fprintf(output"%d",size);
+fprintf(output,"%d",size);
 for(i=rank*N/size;i<(rank+1)*N/size;i++){
     u1 = rand()/(RAND_MAX*1.0);
     u2 = rand()/(RAND_MAX*1.0);
