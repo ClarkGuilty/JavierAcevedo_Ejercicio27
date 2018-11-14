@@ -28,13 +28,18 @@ MPI_Comm_size (MPI_COMM_WORLD, &size);
 srand(rank);
 sprintf(filename, "sample_%d.dat", rank+1);
 FILE *output = fopen(filename, "w+");
-fprintf(output,"%d",size);
 for(i=rank*N/size;i<(rank+1)*N/size;i++){
     u1 = rand()/(RAND_MAX*1.0);
     u2 = rand()/(RAND_MAX*1.0);
     actual = sqrt(-2*log(u1))*sin(2*PI*u2);
     fprintf(output, "%f\n",actual*sigma+mu); 
 }
+fclose(output);
+output = fopen("stan.dat", "w+");
+fprintf(output,"%d\n",N); 
+fprintf(output,"%d\n",mu); 
+fprintf(output,"%d\n",sigma);
+fprintf(output,"%d\n",size);
 fclose(output);
 MPI_Finalize(); /* ends MPI */
 return 0;

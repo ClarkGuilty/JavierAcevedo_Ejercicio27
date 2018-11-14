@@ -13,6 +13,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
+def gaussiana(x,mu,sigma):
+    return (1/(sigma*np.sqrt(2*np.pi)))*np.exp(-0.5*((x-mu)/sigma)**2)
+
+
 dat1 = np.loadtxt("sample_1.dat")
 n = dat1[0]
 dat1 = dat1[1:]
