@@ -1,0 +1,4 @@
+all:
+	mpicc 123.c -o test
+	mpirun -np 8 ./test
+	rm test
