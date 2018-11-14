@@ -13,7 +13,7 @@ MPI_Send(&number, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
 } else if (rank == 1) {
 printf("Number = %d\n", number);
 MPI_Recv(&number, 1, MPI_INT, 0, 0, MPI_COMM_WORLD,MPI_STATUS_IGNORE);
-printf("Process 1 received data from process 0, number =\n", number);
+printf("Process 1 received data from process 0, number =%d\n", number);
 }
 MPI_Finalize(); /* ends MPI */
 return 0;
