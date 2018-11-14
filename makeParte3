@@ -1,5 +1,4 @@
 all:
-	mpicc cuenta.c -o cuenta
+	mpicc sample.c -o sample
 	mpiexec -np 4 ./sample 2000 8 2
-#	mpirun -np 4 hostname ./test
-	rm cuenta
+	rm sample
