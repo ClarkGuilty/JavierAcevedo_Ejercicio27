@@ -13,9 +13,9 @@ if( argc != 4 ) {
 }
 char *filename= (char*) malloc(200* sizeof(char));
 //srand(time(NULL));   
-struct timeval time; 
-gettimeofday(&time,NULL);
-srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
+//struct timeval time; 
+//gettimeofday(&time,NULL);
+//srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
 int N = atoi(argv[1]);
 int mu = atoi(argv[2]);
 int sigma = atoi(argv[3]);
@@ -25,6 +25,7 @@ MPI_Init (&argc, &argv);
 /* get current process rank */
 MPI_Comm_rank (MPI_COMM_WORLD, &rank);
 MPI_Comm_size (MPI_COMM_WORLD, &size);
+srand(rank);
 sprintf(filename, "sample_%d.dat", rank+1);
 FILE *output = fopen(filename, "w+");
 fprintf(output,"%d",size);
