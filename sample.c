@@ -24,6 +24,7 @@ MPI_Comm_rank (MPI_COMM_WORLD, &rank);
 MPI_Comm_size (MPI_COMM_WORLD, &size);
 sprintf(filename, "sample_%d.dat", rank+1);
 FILE *output = fopen(filename, "w+");
+fprintf("%d",size);
 for(i=rank*N/size;i<(rank+1)*N/size;i++){
     u1 = rand()/(RAND_MAX*1.0);
     u2 = rand()/(RAND_MAX*1.0);
