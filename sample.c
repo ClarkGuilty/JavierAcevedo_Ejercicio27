@@ -12,10 +12,10 @@ if( argc != 4 ) {
     exit(0);
 }
 char *filename= (char*) malloc(200* sizeof(char));
-//srand(time(NULL));   
-     struct timeval time; 
-     gettimeofday(&time,NULL);
-     srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
+srand(time(NULL));   
+     //struct timeval time; 
+     //gettimeofday(&time,NULL);
+     //srand((time.tv_sec * 1000) + (time.tv_usec / 1000));
 int N = atoi(argv[1]);
 int mu = atoi(argv[2]);
 int sigma = atoi(argv[3]);
