@@ -1,0 +1,11 @@
+/hpcfs/home/fisi4028
+mpicc sample.c -o sample
+mpiexec -np 4 ./sample 2000 8 2
+N=2000
+N=2000
+N=2000
+N=2000
+rm sample
+
+
+(hpcstats) Getting modules
