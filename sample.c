@@ -12,7 +12,8 @@ if( argc != 4 ) {
     exit(0);
 }
 char *filename= (char*) malloc(200* sizeof(char));
-srand(time(NULL));   
+//srand(time(NULL));   
+srand(GetTickCount());
 int N = atoi(argv[1]);
 int mu = atoi(argv[2]);
 int sigma = atoi(argv[3]);
