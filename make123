@@ -1,4 +1,4 @@
 all:
 	mpicc 123.c -o test
-	mpirun -np 4 ./test
+	mpirun -np 4 -hostfile hostname ./test
 	rm test
